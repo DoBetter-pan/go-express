@@ -1,0 +1,77 @@
+<div class="jumbotron">
+    <h2>go-express web frame</h2>
+    <p>
+    Web frame created by Golang. It is the same structure as express in node.js. It is for easy to setup Web by Golang. It is a MVC web frame.
+    </p>
+</div>
+<div>
+    <h2>Why should you want this web frame?</h2>
+    <ul>
+        <li>
+        Jquery and Bootstrap are integrated into the go-express. But you can remove them from the go-express if you donot want to use them.
+        </li>
+        <li>
+        Go-express is a light web frame for you to create a site. It have the easy-use and simple and powerful routes(controller).
+        </li>
+    </ul>
+
+    <h2>Usage</h2>
+
+    <h3>Dependencies:</h3>
+    <ul>
+        <li><code>Golang</code><small><a href="http://golang.org/">http://golang.org/</a></small></li>
+        <li><code>jQuery</code><small><a href="http://jquery.com/">http://jquery.com/</a></small></li>
+        <li><code>Twitter Bootstrap</code><small><a href="http://twitter.github.com/bootstrap/">http://twitter.github.com/bootstrap/</a></small></li>
+        <li><code>google-code-prettify</code><small><a href="https://github.com/google/code-prettify">https://github.com/google/code-prettify</a></small></li>
+    </ul>
+
+    <h3>Install and run:</h3>
+    <pre class="prettyprint">
+    mkdir ~/go_codes/src
+    cd ~/go_codes/src
+    git clone https://github.com/DoBetter-pan/go-express.git
+    cd go-express
+    source setenv.sh
+    go build
+    ./go-express -host=127.0.0.1 -port=9898 </pre>
+    <p>
+    Then you can visit <code>http://127.0.0.1:9898/express/index</code> in brower.<br/><br/>
+    <code>Note:</code><br/> 
+    <ul>
+        <li>You must setup your golang environment first and will change your GOPATH when executing "source setenv.sh". </li>
+        <li>I tested it in Ubuntu. If you are using other OS, it is the same way as in Ubuntu. Please try.</li>
+    </p>
+    </ul>
+
+    <h3>Develop:</h3>
+    <p>
+    I wrote a inline example: express. 
+    If you want to write a new controller, you can refer to these files.
+    </p>
+    <pre class="prettyprint">
+    controller/expressController.go
+    views/express/index.html
+    views/express/about.html </pre>
+    <p>
+    If you want to change the main template, you can change the following files.
+    </p>
+    <pre class="prettyprint">
+    controller/mainController.go
+    views/main/main.html
+    views/main/header.html
+    views/main/content.html
+    views/main/footer.html </pre>
+
+    <h3>What should we do next?</h3>
+    <ul>
+        <li>
+        Model is just a directory, not any file in it. It is not completely now. Go-express will support sql and no-sql database as data source.
+        </li>
+    </ul>
+
+    <h3>Support and contact</h3>
+    <p>
+    If you have any question and advice, you can cantact me in QQ Group: 536069420.
+    </p>
+</div>
+

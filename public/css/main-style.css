@@ -1,0 +1,46 @@
+body {
+	margin: 20px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+body,button,input,select,textarea,p,li,a {
+    font-size: 20px;
+}
+
+.hr-solid {
+    height:1px;
+    border:none;
+    border-top:1px solid #55e5e5;
+}
+
+[role=contentinfo] {
+    text-align: center;
+}
+
+pre.prettyprint {
+  padding: 10px;
+  margin-top: 10px;
+}
