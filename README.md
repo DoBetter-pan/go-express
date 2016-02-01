@@ -3,7 +3,7 @@ Web frame created by Golang. It is the same structure as express in node.js. It 
 # Why should you want this web frame?
 - Jquery and Bootstrap are integrated into the go-express. But you can remove them from the go-express if you donot want to use them.
 - Go-express is a light web frame for you to create a site. It have the easy-use and simple and powerful routes(controller).
-# Usage
+# Usage:
 ## Dependencies:
 - Golanghttp://golang.org/
 - jQueryhttp://jquery.com/
