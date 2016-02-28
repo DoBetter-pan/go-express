@@ -62,6 +62,14 @@ func expressHandler(w http.ResponseWriter, r *http.Request) {
 		})
 }
 
+func treeHandler(w http.ResponseWriter, r *http.Request) {
+	tree := controller.NewTreeController()
+	controller := reflect.ValueOf(tree)
+	controllerAction(w, r, func() reflect.Value {
+		return controller
+		})
+}
+
 func main() {
     p := handleCommandLine()
 
@@ -75,6 +83,7 @@ func main() {
 
 	http.HandleFunc("/", expressHandler)
 	http.HandleFunc("/express/", expressHandler)
+	http.HandleFunc("/tree/", treeHandler)	
     server := fmt.Sprintf("%s:%d", p.host, p.port)
 	err := http.ListenAndServe(server, nil)
 	if err != nil {

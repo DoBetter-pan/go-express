@@ -52,12 +52,13 @@ func NewMainController() *MainController {
 	controller := &MainController{
 		Title: "go-express",
 		Stylesheets: []string {
-			"../extensions/bootstrap-3.3.5/css/bootstrap.min.css",
+			"../extensions/bootstrap-3.3.5/dist/css/bootstrap.min.css",
 			"../assets/css/ie10-viewport-bug-workaround.css",
 			"../css/normalize.css",
 			"../css/main-style.css" },
 		Javscripts: []string {
-			"../js/jquery-1.11.3/jquery-1.11.3.min.js" },
+			"../js/jquery-1.11.3/jquery-1.11.3.min.js",
+			"../extensions/bootstrap-3.3.5/dist/js/bootstrap.min.js" },
 		Startup : "" }
 	controller.Banner = LoadHeaderFromTemplate()
 	controller.Content = LoadContentFromTemplate()

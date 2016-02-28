@@ -1,0 +1,50 @@
+[
+    {
+        "text": "daomubiji",
+        "href": "#",
+        "icon": "glyphicon glyphicon-folder-close",
+        "tags": ["1"],
+        "nodes": [
+        {
+            "text": "daomubiji",
+            "href": "#",
+            "icon": "glyphicon glyphicon-file",
+            "tags": ["2"],           
+        }
+        ]
+    },
+    {
+        "text": "sina",
+        "href": "#",
+        "icon": "glyphicon glyphicon-folder-close",
+        "tags": ["1"],
+        "nodes": [
+        {
+            "text": "sinablog",
+            "href": "#",
+            "icon": "glyphicon glyphicon-file",
+            "tags": ["2"],           
+        },
+        {
+            "text": "dazuiquan",
+            "href": "#",
+            "icon": "glyphicon glyphicon-file",
+            "tags": ["2"],           
+        }        
+        ]
+    },
+    {
+        "text": "smth",
+        "href": "#",
+        "icon": "glyphicon glyphicon-folder-close",
+        "tags": ["1"],
+        "nodes": [
+        {
+            "text": "smth",
+            "href": "#",
+            "icon": "glyphicon glyphicon-file",
+            "tags": ["2"],           
+        }
+        ]
+    }    
+]
