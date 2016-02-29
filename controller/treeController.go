@@ -72,6 +72,10 @@ func (controller *TreeController) IndexAction(w http.ResponseWriter, r *http.Req
     });
 
 	$('#treeview').on('nodeSelected', function(event, data) {
+        if(data.nodes == undefined) {
+        } else {
+            //$('#treeview').treeview('toggleNodeExpanded', [ data.nodeId, { silent: true } ]);
+        }
 		console.log(event);
 		console.log(data);
 	});

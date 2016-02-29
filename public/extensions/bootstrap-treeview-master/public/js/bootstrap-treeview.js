@@ -336,7 +336,10 @@
 		else {
 			
 			if (node.selectable) {
-				this.toggleSelectedState(node, _default.options);
+                //[yingx] when reclicked the node, do not unselect the node
+                this.setSelectedState(node, true, _default.options);
+				this.toggleExpandedState(node, _default.options);
+				//this.toggleSelectedState(node, _default.options);
 			} else {
 				this.toggleExpandedState(node, _default.options);
 			}
