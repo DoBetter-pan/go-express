@@ -73,11 +73,25 @@ func (controller *TreeController) IndexAction(w http.ResponseWriter, r *http.Req
 
 	$('#treeview').on('nodeSelected', function(event, data) {
         if(data.nodes == undefined) {
-        } else {
-            //$('#treeview').treeview('toggleNodeExpanded', [ data.nodeId, { silent: true } ]);
-        }
-		console.log(event);
-		console.log(data);
+			$.ajax({
+		        type: "POST",
+		        url: "article",
+		        cache: false,
+		        dataType: "html",
+		        timeout: 3000,
+		        data:{"id":data.href},		
+		        success: function(resp)
+		        {		        	                      
+					$('#article').html(resp);
+					console.log(resp);		                       
+		        }, //success
+		        error: function(req, msg, err) {
+		        	$('#article').html(msg);
+		        	console.log(req, msg, err);	
+		        }
+		    });//ajax 
+        } 
+		//console.log(data);
 	});
 
     });	
@@ -92,6 +106,24 @@ func (controller *TreeController) IndexAction(w http.ResponseWriter, r *http.Req
 	mainConterller.Startup = template.HTML(startup)
 	mainConterller.Content = LoadTreeIndexFromTemplate()
 	mainConterller.RenderMainFrame(w, r)
+}
+
+func (controller *TreeController) ArticleAction(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	fmt.Println(r.Form)
+	html := `
+	<html>
+		<head><title>504 Gateway Time-out</title></head>
+		<body bgcolor="white">
+			<center><h1>504 Gateway Time-out</h1></center>
+			<hr><center>nginx/1.2.6</center>
+			<h1>%s</h1>
+		</body>
+	</iframe>`
+
+	data := fmt.Sprintf(html, r.Form["id"])
+
+	fmt.Fprintf(w, data)
 }
 
 func LoadTreeAboutFromTemplate() template.HTML {
