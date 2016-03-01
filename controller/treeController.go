@@ -79,7 +79,7 @@ func (controller *TreeController) IndexAction(w http.ResponseWriter, r *http.Req
 		        cache: false,
 		        dataType: "html",
 		        timeout: 3000,
-		        data:{"id":data.href},		
+		        data:{"id":data.href, "text":data.text},		
 		        success: function(resp)
 		        {		        	                      
 					$('#article').html(resp);
@@ -110,18 +110,9 @@ func (controller *TreeController) IndexAction(w http.ResponseWriter, r *http.Req
 
 func (controller *TreeController) ArticleAction(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
-	fmt.Println(r.Form)
-	html := `
-	<html>
-		<head><title>504 Gateway Time-out</title></head>
-		<body bgcolor="white">
-			<center><h1>504 Gateway Time-out</h1></center>
-			<hr><center>nginx/1.2.6</center>
-			<h1>%s</h1>
-		</body>
-	</iframe>`
+	html := `<h1>Get data from models by id: %s</h1>`
 
-	data := fmt.Sprintf(html, r.Form["id"])
+	data := fmt.Sprintf(html, r.Form["id"][0])
 
 	fmt.Fprintf(w, data)
 }
