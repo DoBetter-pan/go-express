@@ -70,6 +70,14 @@ func treeHandler(w http.ResponseWriter, r *http.Request) {
 		})
 }
 
+func tabHandler(w http.ResponseWriter, r *http.Request) {
+	tab := controller.NewTabController()
+	controller := reflect.ValueOf(tab)
+	controllerAction(w, r, func() reflect.Value {
+		return controller
+		})
+}
+
 func main() {
     p := handleCommandLine()
 
@@ -83,7 +91,8 @@ func main() {
 
 	http.HandleFunc("/", expressHandler)
 	http.HandleFunc("/express/", expressHandler)
-	http.HandleFunc("/tree/", treeHandler)	
+	http.HandleFunc("/tree/", treeHandler)
+	http.HandleFunc("/tab/", tabHandler)
     server := fmt.Sprintf("%s:%d", p.host, p.port)
 	err := http.ListenAndServe(server, nil)
 	if err != nil {
